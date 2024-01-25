@@ -29,6 +29,15 @@ levels = {
 
 }
 
+feedback = {
+   0: "Нулевой",
+   1: "Так себе",
+   2: "Можно лучше",
+   3: "Норм",
+   4: "Хорошо",
+   5: "Отлично",
+}
+
 answers = {}
 no_answers = {}
 
@@ -70,3 +79,8 @@ for m in answers:
 print(f'Неправильно отвечены слова:')
 for l in no_answers:
     print(l)
+
+z = len(answers)
+
+print('Ваш ранг:')
+print(feedback[z])
