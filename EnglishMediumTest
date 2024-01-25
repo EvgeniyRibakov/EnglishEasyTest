@@ -1,0 +1,72 @@
+words_easy = {
+    "family":"семья",
+    "hand": "рука",
+    "people":"люди",
+    "evening": "вечер",
+    "minute":"минута",
+}
+
+words_medium = {
+    "believe":"верить",
+    "feel": "чувствовать",
+    "make":"делать",
+    "open": "открывать",
+    "think":"думать",
+}
+
+words_hard   = {
+    "rural":"деревенский",
+    "fortune": "удача",
+    "exercise":"упражнение",
+    "suggest": "предлагать",
+    "except":"кроме",
+}
+
+levels = {
+   1: "Легкий",
+   2: "Средний",
+   3: "Сложный",
+
+}
+
+answers = {}
+no_answers = {}
+
+print('Привет! Выбери уровень сложности...')
+
+for k, v in levels.items():
+    print(f'{k} - {v}')
+
+print('Напиши цифру нужного уровня')
+
+user_levels = int(input())
+
+if user_levels == 1:
+    words = words_easy
+elif user_levels == 2:
+    words = words_medium
+elif user_levels == 3:
+    words = words_hard
+
+print('Выбран уровень сложности, мы предложим 5 слов, подберите перевод')
+
+
+for eng, rus in words.items():
+    dlina = int(len(rus))
+    first_letter = rus[0]
+    print(f'{eng}, {dlina} букв, начинается на {first_letter}...')
+    user_answer = input()
+    if user_answer == rus:
+        answers[eng] = eng
+        print(f'Верно, {eng} — это {rus}')
+    else:
+        no_answers[eng] = eng
+        print(f'Неверно. {eng} — это {rus}')
+
+
+print(f'Правильно отвечены слова:')
+for m in answers:
+    print(m)
+print(f'Неправильно отвечены слова:')
+for l in no_answers:
+    print(l)
